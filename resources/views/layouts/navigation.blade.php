@@ -67,8 +67,8 @@
                 </x-dropdown>
                 @else
                 <div class="hidden space-x-8 sm:-my-px sm:flex" class="links">
-                    <a class="links" href="{{ route('login') }}">
-                        {{ __('Connexion') }}
+                    <a class="links" href="{{ route('register') }}">
+                        {{ __('S\'identifier') }}
                     </a>
                 @endif
             </div>
