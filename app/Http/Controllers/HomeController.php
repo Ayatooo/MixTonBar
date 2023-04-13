@@ -12,6 +12,6 @@ class HomeController extends Controller
         $alcoholArr = RecipesApiController::getAll();
         $nonAlcoholArr = RecipesApiController::getAll(false);
         $random = RecipesApiController::getRandom(4);
-        return view('dashboard', compact('alcoholArr', 'nonAlcoholArr', 'random'));
+        return view('home', compact('alcoholArr', 'nonAlcoholArr', 'random'));
     }
 }
