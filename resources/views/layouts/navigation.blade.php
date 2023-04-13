@@ -25,6 +25,13 @@
                         {{ __('Sans Alcool') }}
                     </a>
                 </div>
+                @if (Auth::check())
+                <div class="hidden space-x-8 sm:-my-px sm:flex" class="links">
+                    <a class="links" href="{{ route('favorites') }}"  :active="request()->routeIs('favorites')">
+                        {{ __('Favoris') }}
+                    </a>
+                </div>
+                @endif
             </div>
 
             <!-- Settings Dropdown -->
