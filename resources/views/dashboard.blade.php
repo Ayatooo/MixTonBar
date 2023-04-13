@@ -35,7 +35,7 @@
             font-size: 2rem;
             font-weight: 700;
         }
-    
+
         .container {
             display: flex;
             flex-wrap: wrap;
@@ -44,3 +44,14 @@
         }
         </style>
 </x-app-layout>
+
+<script>
+    const containerCardCocktail = document.querySelectorAll('.container-card-cocktail');
+
+    containerCardCocktail.forEach((cocktail) => {
+        cocktail.addEventListener('click', () => {
+            const id = cocktail.getAttribute('data-id');
+            window.location.href = '/recipe/' + id;
+        });
+    });
+</script>
