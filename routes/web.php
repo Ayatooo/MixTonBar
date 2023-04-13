@@ -5,6 +5,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RecipesController;
 use Illuminate\Support\Facades\Route;
 
+require __DIR__ . '/auth.php';
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,12 +18,8 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/', [HomeController::class, 'index'])->middleware(['auth', 'verified'])->name('home');
-Route::get('/noalcohol', [HomeController::class, 'index'])->middleware(['auth', 'verified'])->name('noalcohol');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/noalcohol', [HomeController::class, 'index'])->name('noalcohol');
 Route::get('/recipe/{id}', [RecipesController::class, 'index'])->name('recipe');
 
 Route::middleware('auth')->group(function () {
@@ -29,5 +27,3 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-require __DIR__ . '/auth.php';
