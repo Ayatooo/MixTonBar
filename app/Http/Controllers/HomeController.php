@@ -10,6 +10,6 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $data = RecipesController::getAll();
-        return view('welcome');
+        return view('dashboard');
     }
 }
