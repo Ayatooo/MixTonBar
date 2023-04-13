@@ -8,7 +8,7 @@
         <div class="container-barre">
             <div class="barre"></div>
         </div>
-        <div class="category">Ordinary Drink</div>
-        <div class="alcoolornot">Alcoholic</div>
+        <div class="category">{{ $recipe['strCategory'] ?? '' }}</div>
+        <div class="alcoolornot">{{ $recipe['strAlcoholic'] ?? '' }}</div>
     </div>
 </div>
