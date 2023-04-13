@@ -1,17 +1,26 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Accueil') }}
         </h2>
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <x-recipe-card title="Cocktail" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia, nunc nisl ultricies nisl, nec ultricies nisl nunc vel nisl. Sed euismod, nisl vel ultricies lacinia, nunc nisl ultricies nisl, nec ultricies nisl nunc vel nisl." />
-                </div>
-            </div>
+        <div class="container">
+            @foreach($data as $recipe)
+                <x-recipe-card :recipe="$recipe" />
+            @endforeach
+            {{-- <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg"> --}}
+            {{-- </div> --}}
         </div>
     </div>
 </x-app-layout>
+
+<style>
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0 5%;
+    }
+    </style>
