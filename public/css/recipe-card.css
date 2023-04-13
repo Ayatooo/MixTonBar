@@ -11,6 +11,10 @@
     margin-bottom: 2%;
     padding: 0.25rem;
 }
+
+.container-card-cocktail :hover {
+    cursor: pointer;
+}
 .img-cocktail {
     width: 100%;
     height: 180px;
