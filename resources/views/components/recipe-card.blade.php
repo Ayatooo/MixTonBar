@@ -4,6 +4,9 @@
 <div data-id="{{ $recipe['idDrink'] }}" class="container-card-cocktail">
     <img src="{{ $recipe['strDrinkThumb'] }}" alt="img cocktail" class="img-cocktail">
     <div class="infos-cocktail">
+        <div class="favorite">
+            <i class="icon fa-regular fa-star"></i>
+        </div>
         <div class="title">{{ $recipe['strDrink'] }}</div>
         <div class="container-barre">
             <div class="barre"></div>
