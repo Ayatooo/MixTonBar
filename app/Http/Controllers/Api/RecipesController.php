@@ -1,17 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\View;
 
 class RecipesController extends Controller
 {
-    public function index(Request $request)
+    public static function getAll()
     {
         $client = new Client();
-        // https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic
         $response = $client->request('GET', 'https://www.thecocktaildb.com/api/json/v1/1/filter.php', [
             'query' => [
                 'a' => 'Alcoholic',
@@ -19,10 +18,6 @@ class RecipesController extends Controller
         ]);
 
         $body = $response->getBody();
-        $data = json_decode($body->getContents(), true)['drinks'];
-
-        return View('components.recipe-card', [
-            'data' => $data,
-        ]);
+        return json_decode($body->getContents(), true)['drinks'];
     }
 }
