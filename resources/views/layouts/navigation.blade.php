@@ -6,22 +6,22 @@
             <div class="left">
                 <!-- Logo -->
                 <div class="container-filter">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="{{ route('home') }}">
                         <img src="{{ URL::asset('img/filters.png') }}" alt="filters" class="logo-filter" />
                 </div>
 
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}" class="logo-mix">MIX TON BAR</a>
+                    <a href="{{ route('home') }}" class="logo-mix">MIX TON BAR</a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:flex" class="links">
-                    <a class="links" href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <a class="links" href="{{ route('home') }}">
                         {{ __('Avec Alcool') }}
                     </a>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:flex" class="links">
-                    <a class="links" href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                    <a class="links" href="{{ route('noalcohol') }}"  :active="request()->routeIs('noalcohol')">
                         {{ __('Sans Alcool') }}
                     </a>
                 </div>
@@ -81,8 +81,8 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                {{ __('Accueil') }}
             </x-responsive-nav-link>
         </div>
 
@@ -112,3 +112,8 @@
         </div>
     </div>
 </nav>
+<style>
+    a :active {
+        color: #F2C94C;
+    }
+</style>

@@ -12,18 +12,22 @@
                 <x-recipe-card :recipe="$recipe" />
             @endforeach
         </div>
+        @if(request()->routeIs('home'))
         <h1 class="container-title">Les Cocktails Avec Alcool</h1>
         <div class="container">
             @for($i = 0; $i < 10; $i++)
                 <x-recipe-card :recipe="$alcoholArr[$i]" />
             @endfor
         </div>
+        @endif
+        @if(request()->routeIs('noalcohol'))
         <h1 class="container-title">Les Cocktails Sans Alcool</h1>
         <div class="container">
             @for($i = 0; $i < 10; $i++)
                 <x-recipe-card :recipe="$nonAlcoholArr[$i]" />
             @endfor
         </div>
+        @endif
     </div>
     <style>
         .container-title {
