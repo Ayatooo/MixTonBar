@@ -8,12 +8,12 @@ use Illuminate\Http\Request;
 
 class RecipesApiController extends Controller
 {
-    public static function getAll($isAlcohol = true)
+    public static function getAll()
     {
         $client = new Client();
         $response = $client->request('GET', 'https://www.thecocktaildb.com/api/json/v1/1/filter.php', [
             'query' => [
-                'a' => $isAlcohol ? 'Alcoholic' : 'Non_Alcoholic',
+                'a' => 'Alcoholic',
             ],
         ]);
 
@@ -21,24 +21,18 @@ class RecipesApiController extends Controller
         return json_decode($body->getContents(), true)['drinks'];
     }
 
-    public static function getRandom($number)
+    public static function getById($id)
     {
         $client = new Client();
+        $response = $client->request('GET', 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php', [
+            'query' => [
+                'i' => $id,
+            ],
+        ]);
 
-        $promises = [];
-        for ($i = 0; $i < $number; $i++) {
-            $promises[] = $client->requestAsync('GET', 'https://www.thecocktaildb.com/api/json/v1/1/random.php');
-        }
+        $body = $response->getBody();
 
-        $results = \GuzzleHttp\Promise\settle($promises)->wait();
-
-        $data = [];
-        foreach ($results as $result) {
-            if ($result['state'] === 'fulfilled') {
-                $body = $result['value']->getBody();
-                $data[] = json_decode($body->getContents(), true)['drinks'][0];
-            }
-        }
-        return $data;
+        $data = json_decode($body->getContents());
+        return isset($data) ? $data->drinks[0] : abort(404);
     }
 }
