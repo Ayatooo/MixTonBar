@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/recipe-card.css') }}" media="all">
 
 <div class="container-card-cocktail">
@@ -11,4 +12,3 @@
         <div class="alcoolornot">Alcoholic</div>
     </div>
 </div>
-
