@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function index(Request $request)
     {
-        $alcoholArr = RecipesApiApiController::getAll();
+        $alcoholArr = RecipesApiController::getAll();
         $nonAlcoholArr = RecipesApiController::getAll(false);
         $random = RecipesApiController::getRandom(4);
         return view('dashboard', compact('alcoholArr', 'nonAlcoholArr', 'random'));
