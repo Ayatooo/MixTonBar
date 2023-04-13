@@ -1,12 +1,112 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
 .container-header {
-    margin-top: 50px; /*A ENLEVER*/
     width: 100%;
-    height: 80px;
+    height: 3.75rem;
     background-color: #2f2f2f;
     border: 1px solid black;
     display: flex;
     font-family: "Montserrat", sans-serif;
     color: white;
     align-items: center;
+    padding: 2%;
 }
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.container-filter {
+    display: flex;
+    align-items: center;
+}
+
+.logo-filter {
+    display: flex;
+    align-items: center;
+    width: 30px;
+    height: auto;
+}
+
+.logo-filter:hover {
+    cursor: pointer;
+    text-shadow: 8px 11px 10px rgba(0, 0, 0, 0.25);
+}
+
+.logo-mix {
+    margin: 0 1.563rem 0 1.563rem;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    font-weight: 800;
+    font-size: 1.65rem;
+    text-shadow: 8px 11px 10px rgba(0, 0, 0, 0.25);
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 1.563rem 0 1.563rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+.links:hover {
+    cursor: pointer;
+    color: #be21cc;
+    font-weight: bold;
+    transition-duration: 0.3s;
+    transition-property: color;
+}
+
+.container-searchbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 1.5rem 0 1.563rem;
+    background-color: #fff;
+    border-radius: 35px;
+    justify-content: center;
+}
+
+.loupe {
+    width: 20px;
+    height: auto;
+}
+.searchbar {
+    width: 80%;
+    height: 2.5rem;
+    border: none;
+    border-radius: 35px;
+    padding: 0 1.563rem 0 1.563rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+    color: black;
+    -webkit-appearance: none;
+}
+
+.searchbar::placeholder {
+    color: #7f7f7f;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+/* input:focus,
+input:hover {
+    outline: 0;
+    outline: none;
+    outline: transparent;
+    --tw-ring-color: transparent;
+    --tw-ring-offset-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: var(--tw-ring-inset) 0 0 0 calc(0px);
+} */

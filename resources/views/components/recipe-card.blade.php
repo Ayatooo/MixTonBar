@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/recipe-card.css') }}" media="all">
 
 <div data-id="{{ $recipe['idDrink'] }}" class="container-card-cocktail">
