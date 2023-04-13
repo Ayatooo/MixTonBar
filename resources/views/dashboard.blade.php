@@ -32,6 +32,8 @@
             color: #fff;
             font-size: 2rem;
             font-weight: 700;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .container {
