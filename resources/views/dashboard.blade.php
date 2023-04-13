@@ -1,17 +1,46 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Accueil') }}
         </h2>
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <x-recipe-card title="Cocktail" description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl vel ultricies lacinia, nunc nisl ultricies nisl, nec ultricies nisl nunc vel nisl. Sed euismod, nisl vel ultricies lacinia, nunc nisl ultricies nisl, nec ultricies nisl nunc vel nisl." />
-                </div>
-            </div>
+        <h1 class="container-title">Cocktails Aléatoires</h1>
+        <div class="container">
+            @foreach($random as $recipe)
+                <x-recipe-card :recipe="$recipe" />
+            @endforeach
+        </div>
+        <h1 class="container-title">Les Cocktails Avec Alcool</h1>
+        <div class="container">
+            @for($i = 0; $i < 10; $i++)
+                <x-recipe-card :recipe="$alcoholArr[$i]" />
+            @endfor
+        </div>
+        <h1 class="container-title">Les Cocktails Sans Alcool</h1>
+        <div class="container">
+            @for($i = 0; $i < 10; $i++)
+                <x-recipe-card :recipe="$nonAlcoholArr[$i]" />
+            @endfor
         </div>
     </div>
+    <style>
+        .container-title {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            font-family: "Montserrat", sans-serif;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+    
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0 5%;
+        }
+        </style>
 </x-app-layout>

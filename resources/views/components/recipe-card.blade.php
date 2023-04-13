@@ -1,11 +1,10 @@
-{{-- CARDS --}}
+
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/recipe-card.css') }}" media="all">
 
-
 <div class="container-card-cocktail">
-    <img src="{{ URL::asset('img/img-cocktail.png') }}" alt="img cocktail" class="img-cocktail">
+    <img src="{{ $recipe['strDrinkThumb'] }}" alt="img cocktail" class="img-cocktail">
     <div class="infos-cocktail">
-        <div class="title">1001</div>
+        <div class="title">{{ $recipe['strDrink'] }}</div>
         <div class="container-barre">
             <div class="barre"></div>
         </div>
