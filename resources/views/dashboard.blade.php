@@ -6,21 +6,41 @@
     </x-slot>
 
     <div class="py-12">
+        <h1 class="container-title">Cocktails Aléatoires</h1>
         <div class="container">
-            @foreach($data as $recipe)
+            @foreach($random as $recipe)
                 <x-recipe-card :recipe="$recipe" />
             @endforeach
-            {{-- <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg"> --}}
-            {{-- </div> --}}
+        </div>
+        <h1 class="container-title">Les Cocktails Avec Alcool</h1>
+        <div class="container">
+            @for($i = 0; $i < 10; $i++)
+                <x-recipe-card :recipe="$alcoholArr[$i]" />
+            @endfor
+        </div>
+        <h1 class="container-title">Les Cocktails Sans Alcool</h1>
+        <div class="container">
+            @for($i = 0; $i < 10; $i++)
+                <x-recipe-card :recipe="$nonAlcoholArr[$i]" />
+            @endfor
         </div>
     </div>
+    <style>
+        .container-title {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            font-family: "Montserrat", sans-serif;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+    
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0 5%;
+        }
+        </style>
 </x-app-layout>
-
-<style>
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin: 0 5%;
-    }
-    </style>

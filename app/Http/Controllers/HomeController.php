@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Api\RecipesController;
+use App\Http\Controllers\Api\RecipesApiController;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index(Request $request)
     {
-        $data = RecipesController::getAll();
-        return view('dashboard', compact('data'));
+        $alcoholArr = RecipesApiController::getAll();
+        $nonAlcoholArr = RecipesApiController::getAll(false);
+        $random = RecipesApiController::getRandom(4);
+        return view('dashboard', compact('alcoholArr', 'nonAlcoholArr', 'random'));
     }
 }
