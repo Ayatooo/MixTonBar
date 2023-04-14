@@ -1,66 +1,66 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# MixTonBar 🍸
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Mix Ton Bar is a project designed for students who are looking for a fun and enjoyable place to mix ingredients and make cocktails. The bar is specifically designed to cater to the needs of students, with a focus on providing an enjoyable experience that is also responsible and safe.
 
-## About Laravel
+# Features 🍹
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+A wide selection of ingredients, including spirits, mixers, fruits, and garnishes, to create a variety of cocktails.
+A variety of food options to choose from to complement your drinks.
+A comfortable and inviting atmosphere, with plenty of seating and lighting.
+A dedicated area for mixing and creating cocktails.
+High-quality equipment, including shakers, jiggers, and strainers, to ensure the perfect cocktail every time.
+A team of experienced and friendly staff to ensure that you have a great time.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# Favorite Cocktails⭐
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Here are some of our favorite cocktails that you can make at Mix Ton Bar:
 
-## Learning Laravel
+Margarita: Tequila, lime juice, and triple sec, served with salt on the rim.
+Mojito: Rum, lime juice, simple syrup, mint, and club soda.
+Cosmopolitan: Vodka, cranberry juice, triple sec, and lime juice.
+Old Fashioned: Bourbon or rye whiskey, simple syrup, bitters, and an orange twist.
+Long Island Iced Tea: Vodka, gin, rum, tequila, triple sec, lemon juice, and cola.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+# Note and Rate the Cocktails 🗈
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+We encourage our guests to take note of the cocktails they create and rate them according to their personal taste. This can help you remember what you enjoyed and what you might want to try again in the future. You can also share your notes and ratings with your friends to help them discover new cocktails.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+# Installation ⬇️
+To run the project, you'll need :
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+    php 8+
+    docker fully installed (client on windows or wsl)
+    composer 2.0+
+    node v17+
 
-### Premium Partners
+Then,
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+    docker run --rm --interactive --tty \
+    --volume $PWD:/app \
+    composer install --ignore-platform-reqs
+And,
 
-## Contributing
+    docker run --rm --interactive --tty \
+    --volume $PWD:/app \
+    composer require laravel/sail --dev
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Then,
 
-## Code of Conduct
+    copy and paste the .env.example in the .env, you don't have to  change it
+    run : npm install
+    run : php artisan sail:install
+    run : ./vendor/bin/sail up
+    migrate and seed the database with : ./vendor/bin/sail artisan migrate:fresh --seed
+    refresh routes and configurations with : ./vendor/bin/sail artisan optimize
+    run npm run dev
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+# Utilisation 🪧
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+You can now go on http://localhost
+You may register and login to have a fully experience (with the favorite feature )
 
-## License
+# Contact Us 🕿
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+If you have any questions or concerns about Mix Ton Bar, please feel free to contact us at [MixTonBar@Ynov.com]. We would be happy to answer any questions you may have and provide you with more information about our services.
