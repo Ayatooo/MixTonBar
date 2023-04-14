@@ -7,7 +7,7 @@
             <!-- Logo -->
             <div class="container-filter">
                 <a href="{{ route('home') }}">
-                    <img src="{{ URL::asset('img/filters.png') }}" alt="filters" class="logo-filter" />
+                    <img src="{{ URL::asset('img/logo/android-chrome-512x512.png') }}" alt="filters" class="logo-filter" />
             </div>
 
             <div class="shrink-0 flex items-center">
