@@ -36,10 +36,20 @@ To run the project, you'll need :
 
 Then,
 
-    set an alias for sail : alias sail="./vendor/bin/sail"
-    run : composer install --ignore-platform-reqs
-    copy and paste the .env.example in the .env, you don't have to change it
+    docker run --rm --interactive --tty \
+    --volume $PWD:/app \
+    composer install --ignore-platform-reqs
+And,
+
+    docker run --rm --interactive --tty \
+    --volume $PWD:/app \
+    composer require laravel/sail --dev
+
+Then,
+
+    copy and paste the .env.example in the .env, you don't have to  change it
     run : npm install
+    run : php artisan sail:install
     run : sail up
     migrate and seed the database with : sail artisan migrate:fresh --seed
     refresh routes and configurations with : sail artisan optimize
