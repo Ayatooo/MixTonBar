@@ -147,16 +147,14 @@
     $(document).ready(function() {
         const token = "{{ json_encode(csrf_token()) }}";
         $('#searchbar').select2({
-            minimumInputLength: 2,
-            tags: [],
+            placeholder: "Recherche...",
             ajax: {
                 url: '/search',
                 dataType: 'json',
                 type: "POST",
-                quietMillis: 50,
-                data: function(term, token) {
+                data: function(search, token) {
                     return {
-                        term: term,
+                        search: search,
                         _token: $('meta[name="csrf-token"]').attr('content')
                     };
                 },
@@ -171,6 +169,21 @@
                         })
                     };
                 }
+                // templateSelection: function(option) {
+                //     if (!option.id) {
+                //         return option.text;
+                //     }
+                //     const $span = $('<span>' + option.text + '</span>');
+
+                //     // $span.on('click', function() {
+                //     //     const value = option.id;
+
+                //     //     alert('Vous avez cliqué sur l\'option ' + value);
+                //     // });
+                //     // $span.find("span").text(option.text);
+
+                //     return $span;
+                // }
             }
         });
     });
