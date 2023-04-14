@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\FavoriteController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RecipesController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FavoriteController;
 
 require __DIR__ . '/auth.php';
 
@@ -22,6 +23,7 @@ require __DIR__ . '/auth.php';
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/noalcohol', [HomeController::class, 'index'])->name('noalcohol');
 Route::get('/recipe/{id}', [RecipesController::class, 'index'])->name('recipe');
+Route::post('/search', [SearchController::class, 'searchByStr'])->name('search');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
