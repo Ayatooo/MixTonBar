@@ -33,6 +33,7 @@ To run the project, you'll need :
     docker fully installed (client on windows or wsl)
     composer 2.0+
     node v17+
+    Clone the projet and navigate inside with your terminal to execute the next commands
 
 Then,
 
@@ -49,8 +50,9 @@ Then,
 
     copy and paste the .env.example in the .env, you don't have to  change it
     run : npm install
-    run : php artisan sail:install
+    run : php artisan sail:install : and select mariadb (2)
     run : ./vendor/bin/sail up
+    after the installation, you can rerun if it's down
     migrate and seed the database with : ./vendor/bin/sail artisan migrate:fresh --seed
     refresh routes and configurations with : ./vendor/bin/sail artisan optimize
     run npm run dev
