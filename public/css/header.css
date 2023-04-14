@@ -69,17 +69,17 @@
 .container-searchbar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    justify-content: space-evenly;
+    width: 20rem;
+    height: 1.8rem;
     margin: 0 1.5rem 0 1.563rem;
     background-color: #fff;
     border-radius: 35px;
-    justify-content: center;
 }
-
 .loupe {
-    width: 20px;
+    width: 18px;
     height: auto;
+    cursor: pointer;
 }
 #searchbar {
     width: 80%;
@@ -91,23 +91,7 @@
     font-size: 1em;
     font-weight: 600;
     color: black;
-    -webkit-appearance: none;
 }
-
-#searchbar::placeholder {
-    color: #7f7f7f;
-    font-family: "Montserrat", sans-serif;
-    font-size: 1em;
-    font-weight: 600;
+.select2-container--default .select2-selection--single {
+    border: none !important;
 }
-
-/* input:focus,
-input:hover {
-    outline: 0;
-    outline: none;
-    outline: transparent;
-    --tw-ring-color: transparent;
-    --tw-ring-offset-color: transparent;
-    -webkit-box-shadow: none;
-    box-shadow: var(--tw-ring-inset) 0 0 0 calc(0px);
-} */

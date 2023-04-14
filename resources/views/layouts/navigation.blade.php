@@ -39,7 +39,8 @@
 
             <div class="container-searchbar">
                 <img src="{{ URL::asset('img/search icon.svg') }}" alt="" class="loupe">
-                <select id="searchbar">
+                <select class="select" id="searchbar">
+                    <option selected>Recherche ...</option>
                 </select>
             </div>
 
