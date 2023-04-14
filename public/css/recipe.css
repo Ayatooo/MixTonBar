@@ -1,0 +1,84 @@
+.container-one-cocktail {
+    padding: 70px;
+}
+.container-cocktail {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.container-cocktail-img {
+    width: 40%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-cocktail-infos {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-cocktail-name {
+    display: flex;
+    color: #010101;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.container-cocktail-ingredients {
+    background: #2f2f2f;
+    box-shadow: 6px 7px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 26px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    padding: 20px;
+}
+
+li {
+    list-style: disc;
+    margin-left: 30px;
+}
+
+.text-recipe {
+    margin: 10px 0 10px 0;
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-style: normal;
+    color: #010101;
+}
+
+.infos-recipe li {
+    list-style-type: none; /* Masquer les puces par défaut */
+    position: relative; /* Permet de positionner les chiffres à l'intérieur des carrés */
+    margin-bottom: 10px; /* Espacement entre chaque élément de liste */
+    padding-left: 40px; /* Espacement à gauche pour laisser de la place aux carrés */
+}
+
+.infos-recipe li:before {
+    content: counter(custom-counter);
+    counter-increment: custom-counter;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: linear-gradient(0deg, #4b4a4a, #4b4a4a),
+        linear-gradient(0deg, #4b4a4a, #4b4a4a),
+        linear-gradient(0deg, #4b4a4a, #4b4a4a), #4b4a4a;
+    border-radius: 7px;
+    color: white;
+    font-family: "Montserrat";
+    font-weight: 700;
+}
