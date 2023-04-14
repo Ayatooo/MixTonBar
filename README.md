@@ -50,9 +50,9 @@ Then,
     copy and paste the .env.example in the .env, you don't have to  change it
     run : npm install
     run : php artisan sail:install
-    run : sail up
-    migrate and seed the database with : sail artisan migrate:fresh --seed
-    refresh routes and configurations with : sail artisan optimize
+    run : ./vendor/bin/sail up
+    migrate and seed the database with : ./vendor/bin/sail artisan migrate:fresh --seed
+    refresh routes and configurations with : ./vendor/bin/sail artisan optimize
     run npm run dev
 
 
