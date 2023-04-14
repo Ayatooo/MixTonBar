@@ -47,7 +47,9 @@
     font-size: 1.65rem;
     text-shadow: 8px 11px 10px rgba(0, 0, 0, 0.25);
 }
-
+.links.active {
+    color: #be21cc;
+}
 .links {
     display: flex;
     align-items: center;
@@ -94,6 +96,32 @@
 }
 .select2-container--default .select2-selection--single {
     border: none !important;
+}
+
+.btn-login {
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 5px;
+    background-color: #454545;
+    font-weight: 500;
+    width: 7rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-login:hover,
+.btn-login:focus {
+    background-color: #3b3b3b;
+}
+.dropdown {
+    background-color: #454545 !important;
+    border-radius: 5px;
+}
+.dropdown:hover,
+.dropdown:focus {
+    background-color: #3b3b3b !important;
+    border-radius: 5px;
 }
 
 /***responsive***/

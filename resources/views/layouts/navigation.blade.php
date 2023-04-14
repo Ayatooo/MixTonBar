@@ -17,18 +17,18 @@
 
             <!-- Navigation Links -->
             <div class="hidden space-x-8 sm:-my-px sm:flex" class="links">
-                <a class="links" href="{{ route('home') }}">
+                <a class="links {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">
                     {{ __('Avec Alcool') }}
                 </a>
             </div>
             <div class="hidden space-x-8 sm:-my-px sm:flex" class="links">
-                <a class="links" href="{{ route('noalcohol') }}" :active="request() - > routeIs('noalcohol')">
+                <a class="links {{ request()->routeIs('noalcohol') ? 'active' : '' }}" href="{{ route('noalcohol') }}" :active="request() - > routeIs('noalcohol')">
                     {{ __('Sans Alcool') }}
                 </a>
             </div>
             @if (Auth::check())
                 <div class="hidden space-x-8 sm:-my-px sm:flex" class="links">
-                    <a class="links" href="{{ route('favorites') }}" :active="request() - > routeIs('favorites')">
+                    <a class="links {{ request()->routeIs('favorites') ? 'active' : '' }}" href="{{ route('favorites') }}" :active="request() - > routeIs('favorites')">
                         {{ __('Favoris') }}
                     </a>
                 </div>
@@ -48,7 +48,7 @@
             @if (Auth::check())
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
-                        <button
+                        <button class="btn-login"
                             class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
                             <div>{{ Auth::user()->name ?? '' }}</div>
                             <div class="ml-1">
@@ -63,7 +63,7 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('profile.edit')">
+                        <x-dropdown-link :href="route('profile.edit')" class="dropdown">
                             {{ __('Profil') }}
                         </x-dropdown-link>
 
@@ -71,7 +71,7 @@
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
-                            <x-dropdown-link :href="route('logout')"
+                            <x-dropdown-link :href="route('logout')" class="dropdown"
                                 onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                 {{ __('Déconnexion') }}
