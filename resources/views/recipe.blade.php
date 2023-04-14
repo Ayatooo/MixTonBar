@@ -15,10 +15,11 @@
                 <div class="container-cocktail-ingredients">
                     <div class="text-ingredients">Pour préparer ce cocktail, il vous faudra par verre :</div>
                     <ul class="list-ingredients">
-                        <li>{{$data->strIngredient1}}</li>
-                        <li>{{$data->strIngredient2}}</li>
-                        <li>{{$data->strIngredient3}}</li>
-                        <li>{{$data->strIngredient4}}</li>
+                        @for ($i = 1; $i <= 8; $i++)
+                        @if ($data->{'strIngredient'.$i} !== null)
+                            <li>{{ $data->{'strIngredient'.$i} }}</li>
+                        @endif
+                    @endfor
                     </ul>
                 </div>
                 <div class="container-cocktail-recipe">
@@ -28,10 +29,7 @@
                         </div>
                         <div class="infos-recipe">
                             <ul class="list-recipe">
-                                <li>{{$data->strMeasure1}}</li>
-                                <li>{{$data->strMeasure2}}</li>
-                                <li>{{$data->strMeasure3}}</li>
-                                <li>{{$data->strMeasure4}}</li>
+                                <li>{{$data->strInstructions}}</li>
                             </ul>
                         </div>
                     </div>
