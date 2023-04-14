@@ -172,5 +172,9 @@
                 }
             }
         });
+        $('#searchbar').on('select2:select', function(e) {
+            const data = e.params.data;
+            window.location.href = "/recipe/" + data.id;
+        });
     });
 </script>
