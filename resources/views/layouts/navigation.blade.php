@@ -7,7 +7,8 @@
             <!-- Logo -->
             <div class="container-filter">
                 <a href="{{ route('home') }}">
-                    <img src="{{ URL::asset('img/logo/android-chrome-512x512.png') }}" alt="filters" class="logo-filter" />
+                    <img src="{{ URL::asset('img/logo/android-chrome-512x512.png') }}" alt="filters"
+                        class="logo-filter" />
             </div>
 
             <div class="shrink-0 flex items-center">
@@ -148,16 +149,14 @@
     $(document).ready(function() {
         const token = "{{ json_encode(csrf_token()) }}";
         $('#searchbar').select2({
-            minimumInputLength: 2,
-            tags: [],
+            placeholder: "Recherche...",
             ajax: {
                 url: '/search',
                 dataType: 'json',
                 type: "POST",
-                quietMillis: 50,
-                data: function(term, token) {
+                data: function(search, token) {
                     return {
-                        term: term,
+                        search: search,
                         _token: $('meta[name="csrf-token"]').attr('content')
                     };
                 },
@@ -173,6 +172,10 @@
                     };
                 }
             }
+        });
+        $('#searchbar').on('select2:select', function(e) {
+            const data = e.params.data;
+            window.location.href = "/recipe/" + data.id;
         });
     });
 </script>

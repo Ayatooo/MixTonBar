@@ -9,7 +9,7 @@ class SearchController extends Controller
 {
     public function searchByStr(Request $request)
     {
-        $term = $request->input('term')['term'];
+        $term = $request->input('search')['term'];
         $client = new Client();
         $response = $client->request('GET', 'https://www.thecocktaildb.com/api/json/v1/1/search.php', [
             'query' => [
