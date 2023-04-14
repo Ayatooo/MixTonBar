@@ -7,7 +7,8 @@
             <!-- Logo -->
             <div class="container-filter">
                 <a href="{{ route('home') }}">
-                    <img src="{{ URL::asset('img/logo/android-chrome-512x512.png') }}" alt="filters" class="logo-filter" />
+                    <img src="{{ URL::asset('img/logo/android-chrome-512x512.png') }}" alt="filters"
+                        class="logo-filter" />
             </div>
 
             <div class="shrink-0 flex items-center">
@@ -169,21 +170,6 @@
                         })
                     };
                 }
-                // templateSelection: function(option) {
-                //     if (!option.id) {
-                //         return option.text;
-                //     }
-                //     const $span = $('<span>' + option.text + '</span>');
-
-                //     // $span.on('click', function() {
-                //     //     const value = option.id;
-
-                //     //     alert('Vous avez cliqué sur l\'option ' + value);
-                //     // });
-                //     // $span.find("span").text(option.text);
-
-                //     return $span;
-                // }
             }
         });
     });
