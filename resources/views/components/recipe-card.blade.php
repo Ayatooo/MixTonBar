@@ -1,10 +1,22 @@
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/recipe-card.css') }}" media="all">
 
+@if (Auth::check())
+    @php
+    $isFavorite = false;
+    DB::table('favorites')->where('user_id', Auth::user()->id)->where('cocktail_id', $recipe['idDrink'])->get()->each(function($item) use (&$isFavorite) {
+        $isFavorite = true;
+    });
+    @endphp
+@endif
 <div data-id="{{ $recipe['idDrink'] }}" class="container-card-cocktail">
     <img src="{{ $recipe['strDrinkThumb'] }}" alt="img cocktail" class="img-cocktail">
     <div class="infos-cocktail">
         <div class="favorite">
-            <i class="icon fa-regular fa-star"></i>
+            @if (Auth::check() && $isFavorite)
+                <i class="icon fa-solid fa-star" style="color: #be21cc"></i>
+            @elseif (Auth::check())
+                <i class="icon fa-regular fa-star"></i>
+            @endif
         </div>
         <div class="title">{{ $recipe['strDrink'] }}</div>
         <div class="container-barre">
@@ -18,6 +30,7 @@
 <script>
     $(document).ready(function() {
         $('.favorite').unbind().click(function() {
+            let icon = $(this).find('i');
             $.ajax({
                 type: 'POST',
                 url: '/add-favorite',
@@ -26,7 +39,18 @@
                     _token: '{{ csrf_token() }}'
                 },
                 success: function(data) {
-                    // ! TODO : changer la couleur de l'étoile en violet
+                    if (data.status == "store") {
+                        icon.css('color', '#be21cc');
+                        icon.removeClass('fa-regular');
+                        icon.addClass('fa-solid');
+                    } else {
+                        if (window.location.href.includes('favorites')) {
+                            icon.parent().parent().parent().remove();
+                        }
+                        icon.css('color', 'white');
+                        icon.removeClass('fa-solid');
+                        icon.addClass('fa-regular');
+                    }
                 }
             })
             return false;

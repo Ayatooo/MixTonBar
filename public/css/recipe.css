@@ -1,7 +1,11 @@
+body {
+    overflow-x: hidden;
+}
 .container-one-cocktail {
-    padding: 70px;
+    padding: 4.375rem;
 }
 .container-cocktail {
+    padding-top: 1.875rem;
     display: flex;
     width: 80%;
     justify-content: space-between;
@@ -13,6 +17,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.cocktail-img {
+    box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.5);
 }
 
 .container-cocktail-infos {
@@ -28,7 +35,7 @@
     font-family: "Montserrat", sans-serif;
     font-size: 2.5em;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
 }
 
 .container-cocktail-ingredients {
@@ -37,16 +44,16 @@
     border-radius: 26px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
     color: #ffffff;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
-    padding: 20px;
+    padding: 1.25rem;
 }
 
 li {
     list-style: disc;
-    margin-left: 30px;
+    margin-left: 1.875rem;
 }
 
 .text-recipe {
@@ -57,28 +64,40 @@ li {
     color: #010101;
 }
 
-.infos-recipe li {
-    list-style-type: none; /* Masquer les puces par défaut */
-    position: relative; /* Permet de positionner les chiffres à l'intérieur des carrés */
-    margin-bottom: 10px; /* Espacement entre chaque élément de liste */
-    padding-left: 40px; /* Espacement à gauche pour laisser de la place aux carrés */
-}
-
-.infos-recipe li:before {
-    content: counter(custom-counter);
-    counter-increment: custom-counter;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-    background: linear-gradient(0deg, #4b4a4a, #4b4a4a),
-        linear-gradient(0deg, #4b4a4a, #4b4a4a),
-        linear-gradient(0deg, #4b4a4a, #4b4a4a), #4b4a4a;
-    border-radius: 7px;
-    color: white;
+.infos-recipe {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25rem;
+    color: black;
     font-family: "Montserrat";
     font-weight: 700;
+}
+
+.degustez {
+    margin-top: 3.125rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+
+    color: #010101;
+}
+
+.container-the-alcool {
+    width: 31.25rem;
+    height: 31.25rem;
+    position: absolute;
+    right: -4.375rem;
+    top: 9.375rem;
+    opacity: 35%;
+}
+.infos-recipe {
+    margin-top: 1.25rem;
+}
+.instructions {
+    text-align: justify;
+    margin: -0.813rem 0 0 1.875rem;
 }
