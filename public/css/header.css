@@ -81,7 +81,7 @@
     width: 20px;
     height: auto;
 }
-.searchbar {
+#searchbar {
     width: 80%;
     height: 2.5rem;
     border: none;
@@ -94,7 +94,7 @@
     -webkit-appearance: none;
 }
 
-.searchbar::placeholder {
+#searchbar::placeholder {
     color: #7f7f7f;
     font-family: "Montserrat", sans-serif;
     font-size: 1em;
