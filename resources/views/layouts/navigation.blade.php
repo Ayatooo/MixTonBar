@@ -145,24 +145,33 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>
     $(document).ready(function() {
-        $('#searchbar').select2();
-
-        $('#searchbar').on('keyup', function() {
-            const searchValue = $(this).val();
-            console.log(searchValue);
+        const token = "{{ json_encode(csrf_token()) }}";
+        $('#searchbar').select2({
+            minimumInputLength: 2,
+            tags: [],
+            ajax: {
+                url: '/search',
+                dataType: 'json',
+                type: "POST",
+                quietMillis: 50,
+                data: function(term, token) {
+                    return {
+                        term: term,
+                        _token: $('meta[name="csrf-token"]').attr('content')
+                    };
+                },
+                processResults: function(data) {
+                    return {
+                        results: $.map(data, function(item) {
+                            return {
+                                text: item.name,
+                                slug: item.name,
+                                id: item.id
+                            }
+                        })
+                    };
+                }
+            }
         });
     });
-
-    // const value = $(this).val();
-    // $.ajax({
-    //     type: "POST",
-    //     url: "/search",
-    //     data: {
-    //         search: value,
-    //         _token: '{{ csrf_token() }}'
-    //     },
-    //     success: function(data) {
-    //         console.log(data);
-    //     }
-    // });
 </script>
