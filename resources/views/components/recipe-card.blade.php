@@ -1,10 +1,22 @@
 <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/recipe-card.css') }}" media="all">
 
+@if (Auth::check())
+    @php
+    $isFavorite = false;
+    DB::table('favorites')->where('user_id', Auth::user()->id)->where('cocktail_id', $recipe['idDrink'])->get()->each(function($item) use (&$isFavorite) {
+        $isFavorite = true;
+    });
+    @endphp
+@endif
 <div data-id="{{ $recipe['idDrink'] }}" class="container-card-cocktail">
     <img src="{{ $recipe['strDrinkThumb'] }}" alt="img cocktail" class="img-cocktail">
     <div class="infos-cocktail">
         <div class="favorite">
-            <i class="icon fa-regular fa-star"></i>
+            @if (Auth::check() && $isFavorite)
+                <i class="icon fa-solid fa-star" style="color: #be21cc"></i>
+            @elseif (Auth::check())
+                <i class="icon fa-regular fa-star"></i>
+            @endif
         </div>
         <div class="title">{{ $recipe['strDrink'] }}</div>
         <div class="container-barre">
