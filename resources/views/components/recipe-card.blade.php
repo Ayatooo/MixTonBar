@@ -44,6 +44,7 @@
                         icon.removeClass('fa-regular');
                         icon.addClass('fa-solid');
                     } else {
+                        icon.parent().parent().parent().remove();
                         icon.css('color', 'white');
                         icon.removeClass('fa-solid');
                         icon.addClass('fa-regular');
