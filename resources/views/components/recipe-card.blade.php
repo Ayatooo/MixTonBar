@@ -18,6 +18,7 @@
 <script>
     $(document).ready(function() {
         $('.favorite').unbind().click(function() {
+            let icon = $(this).find('i');
             $.ajax({
                 type: 'POST',
                 url: '/add-favorite',
@@ -26,7 +27,15 @@
                     _token: '{{ csrf_token() }}'
                 },
                 success: function(data) {
-                    // ! TODO : changer la couleur de l'étoile en violet
+                    if (data.status == "store") {
+                        icon.css('color', '#be21cc');
+                        icon.removeClass('fa-regular');
+                        icon.addClass('fa-solid');
+                    } else {
+                        icon.css('color', 'white');
+                        icon.removeClass('fa-solid');
+                        icon.addClass('fa-regular');
+                    }
                 }
             })
             return false;
